@@ -6,12 +6,9 @@ namespace Mod::MvM::No_Halloween_Souls
 {
 	DETOUR_DECL_MEMBER(void, CTFGameRules_DropHalloweenSoulPack, int i1, const Vector& vec1, CBaseEntity *ent1, int i2)
 	{
-		if (TFGameRules()->IsMannVsMachineMode()) {
-			/* don't spawn "halloween_souls_pack" entities in MvM mode */
-			return;
-		}
+		return;
 		
-		DETOUR_MEMBER_CALL(i1, vec1, ent1, i2);
+		//DETOUR_MEMBER_CALL(i1, vec1, ent1, i2);
 	}
 	
 	

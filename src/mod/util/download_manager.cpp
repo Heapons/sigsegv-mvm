@@ -887,7 +887,7 @@ namespace Mod::Util::Download_Manager
 
 		FileFindHandle_t mapHandle;
 		// Find maps in all game directories
-		for (const char *mapName = filesystem->FindFirstEx("maps/mvm_*.bsp", "GAME", &mapHandle);
+		for (const char *mapName = filesystem->FindFirstEx("maps/*.bsp", "GAME", &mapHandle);
 						mapName != nullptr; mapName = filesystem->FindNext(mapHandle)) {
 			//Remove extension from the map name
 			std::string mapNameNoExt(mapName, strlen(mapName) - 4);
@@ -977,7 +977,7 @@ namespace Mod::Util::Download_Manager
 		int files = 0;
 		// Find maps in all game directories
 		if (*cvar_mappath.GetString() == '\0') {
-			for (const char *mapName = filesystem->FindFirstEx("maps/mvm_*.bsp", "GAME", &mapHandle);
+			for (const char *mapName = filesystem->FindFirstEx("maps/*.bsp", "GAME", &mapHandle);
 							mapName != nullptr; mapName = filesystem->FindNext(mapHandle)) {
 
 				AddMapToVoteList(mapName, kvcat, files, maplistStr);
@@ -991,7 +991,7 @@ namespace Mod::Util::Download_Manager
 
 			if ((dir = opendir(path.c_str())) != nullptr) {
 				while ((ent = readdir(dir)) != nullptr) {
-					if (StringStartsWith(ent->d_name, "mvm_") && StringEndsWith(ent->d_name, ".bsp")) {
+					if (StringEndsWith(ent->d_name, ".bsp")) {
 						AddMapToVoteList(ent->d_name, kvcat, files, maplistStr);
 					}
 				}
@@ -1893,7 +1893,7 @@ namespace Mod::Util::Download_Manager
 		std::string maplistStr;
 		int files = 0;
 		std::unordered_set<std::string> missing_files_all;
-		for (const char *mapName = filesystem->FindFirstEx("maps/mvm_*.bsp", "GAME", &mapHandle);
+		for (const char *mapName = filesystem->FindFirstEx("maps/*.bsp", "GAME", &mapHandle);
 							mapName != nullptr; mapName = filesystem->FindNext(mapHandle)) {
 			string_t pre = gpGlobals->mapname;
 			std::string mapNameNoExt(mapName, strlen(mapName) - 4);
