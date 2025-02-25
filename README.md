@@ -7,17 +7,6 @@ For other Source games, only optimize-only package is provided
 How to run a TF2 server on Windows using WSL: https://github.com/rafradek/sigsegv-mvm/wiki/Installing-on-Windows-with-WSL
 
 # Features
-### Optimize-Only Package
-* Reduce server cpu usage by ~50%
-* [A list of all configurable features](https://github.com/rafradek/sigsegv-mvm/blob/master/cfg/sigsegv_convars_optimize_only.cfg)
-### No-MvM Package
-* Reduce server cpu usage by ~50%
-* Extra player slots
-* Interact with SourceTV spectators
-* Reduce the amount of networked entities and automatically remove disposable entities when the entity limit is met
-* [Hundreds of new attributes](https://sigwiki.potato.tf/index.php/List_of_custom_attributes)
-* [New entity inputs, outputs and keyvalues](https://sigwiki.potato.tf/index.php/Entity_Additions)
-* [A list of all configurable features](https://github.com/rafradek/sigsegv-mvm/blob/master/cfg/sigsegv_convars_no_mvm.cfg)
 ### Full Package
 * All features from above
 * More popfile features documented in [demonstrative popfile](https://github.com/rafradek/sigsegv-mvm/blob/master/scripts/mvm_bigrock_sigdemo.pop) and [wiki](https://sigwiki.potato.tf/)
